@@ -1,0 +1,88 @@
+@charset "utf-8";
+ul.h-left li.language:hover >a,
+ul.h-left li.description:hover >a,
+ul.h-left li.client:hover >a,
+ul.h-right li.brandfind:hover >a,
+ul.h-right li.logreg a:hover,
+ul.c-main-nav>li:hover >a,
+li.language ul >li:hover >a{
+	color: rgb(216,176,86);
+}
+ul.h-left li.language:hover >ul,
+ul.h-right li.contact:hover >ul,
+ul.c-main-nav {
+	display: block;
+}
+.c-top-content ul.c-main-nav>li:hover {
+	border-color: rgb(216,176,86);
+}
+.c-top-content ul.c-main-nav li>ul li:hover {
+	background-color: rgb(170,124,18);
+}
+ul.h-left li.description:hover >a >em{
+	background-position: 1px -45px;
+}
+ul.h-left li.client:hover >a em {
+	background-position: -17px -44px;	
+}
+ul.h-right li.contact:hover em {
+	background-position: -35px -45px;	
+}
+ul.h-right li.brandfind:hover >a em {
+	background-position: -81px -44px;		
+}
+.header .freetouse:hover{
+	background-color: rgb(244,203,105);
+}
+ul.h-right ul.c-lists li.qqconsult > a:hover em {
+	background-position: -62px -168px;				
+}
+ul.h-right ul.c-lists li.qqconsult > a:hover {
+	background-color: rgb(216,176,86);
+}
+ul.h-right ul.c-lists li.qqconsult > a:hover span {
+	color: #fff;
+}
+.c-top-content ul.c-main-nav li>ul {
+	height: 0;
+	overflow: hidden;
+	transition: height .2s ease-in;
+}
+.c-top-content ul.c-main-nav >li:hover >ul {
+	height: 595px;
+}
+.c-top-content ul.c-main-nav >li:hover div.add{
+	background-image: url(../images/img1/icon2.png);
+	background-position: 0 7px;
+}
+/*--module-nav-open--*/
+
+/*--consult-gift-start--*/
+.consult-gift .close:hover {
+	background-color: rgb(246,234,229);
+}
+
+/*--banner-img-start-*/
+.banner img {
+	transition-duration: .3s;
+	transition-timing-function: ease-out;
+}
+.banner ul.l-imgs li:hover img{
+	transform: scale(1.05);	
+}
+.banner ul.r-imgs li:hover img {
+	transform: scale(1.1);
+}
+.banner ul.r-imgs li div.txt {
+	transition-duration: .3s;
+	transition-timing-function: ease-out;
+}
+.banner ul.r-imgs li:hover div.txt{
+	opacity: 1;
+}
+
+/*---footer-right-ul.check-start--*/
+.footer .right ul.check li:hover {
+	background-color: rgb(216,176,86);
+	color: #fff;
+}

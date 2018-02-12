@@ -1,0 +1,252 @@
+@charset "utf-8";
+
+/*---module-nav-start--*/
+.module-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	/*height: 100%;*/
+	background-color: rgba(6,5,4,.9);
+	transition-property: height;
+	overflow: hidden;
+	z-index: 10;
+}
+.module-nav > ul.module-main-nav {
+	margin: 90px auto 20px;
+	width: 1210px;	
+	height: 430px;
+	border-bottom: 1px solid #bbb;
+}
+.module-nav ul.module-main-nav >li{
+	width: 100px;
+	height: 60px;
+	text-align: left;
+	line-height: 60px;
+	font-weight: 900;
+}
+.module-nav ul.module-main-nav >li a {
+	display: block;
+}
+.module-nav ul.module-main-nav >li{
+	position: relative;
+}
+.module-nav li.trend-inter ul.trend-inter-lists,
+.module-nav li.pop-analysis ul.pop-analysis-lists,
+.module-nav li.style ul.style-lists,
+.module-nav li.pattern ul.pattern-lists,
+.module-nav li.fabric ul.fabric-lists,
+.module-nav li.T-station ul.T-station-lists,
+.module-nav li.reading ul.reading-list,
+.module-nav li.meterial ul.meterial-lists,
+.module-nav li.res-dev ul.res-dev-lists,
+.module-nav li.designtolls ul.designtolls-lists,
+.module-nav li.more-trends ul.more-trends-lists{
+	position: absolute;
+	top: 60px;
+	left: 0;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.module-nav ul.trend-inter-lists li,
+.module-nav ul.pop-analysis-lists li,
+.module-nav ul.style-lists li,
+.module-nav ul.pattern-lists li,
+.module-nav ul.fabric-lists li,
+.module-nav ul.T-station-lists li, 
+.module-nav ul.reading-lists li,
+.module-nav ul.meterial-lists li,
+.module-nav ul.res-dev-lists li,
+.module-nav ul.designtolls-lists li,
+.module-nav ul.more-trends-lists li{
+	width: 100px;
+	height: 35px;
+	font-size: 14px;
+	text-align: left;
+	color: red;
+	line-height: 35px;
+}
+
+/*--module-nav-bottom-start--*/
+.module-nav-bottom {
+	width: 1210px;
+	height: 200px;
+	margin: 0 auto;
+}
+.module-nav-bottom ul.cloth-classification >li:not(.line){
+	box-sizing: border-box;
+	width: 55px;
+	height: 55px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	margin-right: 20px;
+	text-align: center;
+	font-size: 14px;	
+}
+.module-nav-bottom ul.cloth-classification >li.line {
+	width: 1px;
+	height: 40px;
+	margin-top: 10px;
+	margin-right: 20px;
+	background-color: #ccc;
+}
+.module-nav-bottom ul.cloth-classification >li.linecenter{
+	line-height: 55px;
+}
+.module-nav-bottom ul.cloth-classification >li.vcenter {
+	padding-top: 5px;
+}
+.module-nav-bottom ul.cloth-classification >li.product-consult,
+.module-nav-bottom ul.cloth-classification >li.aftersale-help{
+	width:190px;
+	height: 60px;
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+	text-align: left;
+	color: #fff;
+	font-size: 14px;
+} 
+.module-nav-bottom ul.cloth-classification >li.product-consult{
+	margin-left: 40px;
+}
+.module-nav-bottom ul.cloth-classification >li.product-consult em,
+.module-nav-bottom ul.cloth-classification >li.aftersale-help em {
+	display: inline-block;	
+	width: 35px;
+	height: 40px;
+	text-align: center;
+	vertical-align: center;
+	background-image: url(../images/img3/vi_icon.png);
+	background-repeat: no-repeat;
+}
+.module-nav-bottom ul.cloth-classification >li.product-consult em {
+	background-position: -35px -215px;
+}
+.module-nav-bottom ul.cloth-classification >li.aftersale-help em {
+	background-position: -80px -215px;
+}
+.module-nav-bottom ul.cloth-classification >li.product-consult p,
+.module-nav-bottom ul.cloth-classification >li.aftersale-help p {
+	display: inline-block;
+	margin-top: 5px;
+}
+/*---module-switch-start---*/
+.module-switch {
+	position: absolute;
+	top: 270px;
+	right: 0;
+	width: 60px;
+	height: 60px;
+	background-color: rgb(216,176,86);
+	color: #fff;
+	font-size: 60px;
+	line-height: 60px;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+}
+
+/*---module-nav-end--*/
+
+/*---pop-window-start---*/
+.pop-window {
+	position: fixed;
+	display: none;
+	box-sizing: border-box;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	padding-top: 20px;
+	background-image: url(../images/img3/f_bg.png);
+	background-repeat: no-repeat;
+	color: #fff;
+	text-align: right;
+	user-select: none;
+}
+.pop-window .window-all {
+	width: 1210px;
+	height: 100%;
+}
+.pop-window span{
+	vertical-align: middle;
+}
+.pop-window a button {
+	width: 140px;
+	height: 50px;
+	border: 0;
+	margin-left: 40px;
+	border-radius: 3px;
+	outline: none;
+	background-color: rgb(244,82,59);
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+}
+.pop-window a button:hover {
+	background-color: rgb(255,102,51);
+}
+.pop-window span.close {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin-left: 150px;
+	margin-right: 50px;
+	background-color: rgba(226,208,172,.2);
+	font-size: 40px;
+	text-align: center;
+	line-height: 35px;
+	cursor: pointer;
+}
+.pop-window span.close:hover {
+	background-color: rgba(226,208,172,.3);
+}
+/*---pop-window-end---*/
+/*---consult-gift-start---*/
+.consult-gift {
+	position: fixed;
+	/*display: none;*/
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 570px;
+	height: 340px;
+}
+.consult-gift img {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.consult-gift .close {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 25px;
+	height: 25px;
+	border-radius: 3px;
+	background-color: rgba(255,255,255,.5);
+	color: rgb(217,138,103);
+	font-size: 35px;
+	font-weight: lighter;
+	text-align: center;
+	line-height: 24px;
+}
+.consult-gift .QQ {
+	position: absolute;
+	bottom: 22px;
+	left: 60px;
+	width: 110px;
+	height: 40px;
+	border-radius: 5px;
+}

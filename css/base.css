@@ -1,0 +1,94 @@
+@charset "utf-8";
+body,ul,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p,th,td{margin:0;padding:0}
+html{user-select: none}
+table{border-collapse:collapse;border-spacing:0}
+img{border:0}
+address,caption,em,strong,th{font-style:normal;font-weight:normal}
+ol,ul{list-style:none;}
+th{text-align:left}
+a{text-decoration:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}
+input,textarea,select{*font-size:100%}
+textarea{resize: none;}
+ul li {display: inline-block;vertical-align: top;}
+li.line i {
+	display: inline-block;
+	width: 1px;
+	height: 16px;
+	background-color: rgb(97,101,107);
+	margin-top: 22px;
+}
+.header em {
+	display: inline-block;
+	width: 20px;
+	height: 18px;
+	margin-right: 1px;
+	margin-left: 1px;
+	vertical-align: middle;
+	background-image: url(../images/img3/vi_icon.png);
+}
+i {
+	display: inline-block;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+a {
+	color: #fff;
+}
+.clearfix{
+	content: "";
+	display: block;
+	clear: both;
+}
+.toblock {
+	display: block;
+}
+.litoline {
+	display: inline-block;
+}
+.litocol {
+	display: block;
+}
+.font12px {
+	font-size: 12px;
+}
+.font13px {
+	font-size: 13px;
+}
+.font14px {
+	font-size: 14px;
+}
+.font16px{
+	font-size: 16px;
+}
+.font18px {
+	font-size: 18px;
+}
+.font20px {
+	font-size: 20px;
+}
+.font30px {
+	font-size: 30px;
+}
+.font40px {
+	font-size: 40px;
+}
+.fontbold {
+	font-weight: bold;
+}
+.fontyellow {
+	color: rgb(216,176,86);
+}
+.font#fff {
+	color: #fff;
+}
+.tran3s {
+	transition-duration: .3s;
+}
+.cursorpointer {
+	cursor: pointer;
+}
+.useselect {
+	user-select: none;
+}
