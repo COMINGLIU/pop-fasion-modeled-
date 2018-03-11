@@ -1,4 +1,5 @@
 @charset "utf-8";
+/* ===header-start=== */
 ul.h-left li.language:hover >a,
 ul.h-left li.description:hover >a,
 ul.h-left li.client:hover >a,
@@ -10,14 +11,8 @@ li.language ul >li:hover >a{
 }
 ul.h-left li.language:hover >ul,
 ul.h-right li.contact:hover >ul,
-ul.c-main-nav {
-	display: block;
-}
-.c-top-content ul.c-main-nav>li:hover {
-	border-color: rgb(216,176,86);
-}
-.c-top-content ul.c-main-nav li>ul li:hover {
-	background-color: rgb(170,124,18);
+.header .freetouse:hover{
+	background-color: rgb(244,203,105);
 }
 ul.h-left li.description:hover >a >em{
 	background-position: 1px -45px;
@@ -31,9 +26,6 @@ ul.h-right li.contact:hover em {
 ul.h-right li.brandfind:hover >a em {
 	background-position: -81px -44px;		
 }
-.header .freetouse:hover{
-	background-color: rgb(244,203,105);
-}
 ul.h-right ul.c-lists li.qqconsult > a:hover em {
 	background-position: -62px -168px;				
 }
@@ -42,6 +34,18 @@ ul.h-right ul.c-lists li.qqconsult > a:hover {
 }
 ul.h-right ul.c-lists li.qqconsult > a:hover span {
 	color: #fff;
+}
+/* ===header-end=== */
+/* ===content-start=== */
+ul.c-main-nav {
+	display: block;
+}
+/* c-top-start */
+.c-top-content ul.c-main-nav>li:hover {
+	border-color: rgb(216,176,86);
+}
+.c-top-content ul.c-main-nav li>ul li:hover {
+	background-color: rgb(170,124,18);
 }
 .c-top-content ul.c-main-nav li>ul {
 	height: 0;
@@ -55,14 +59,7 @@ ul.h-right ul.c-lists li.qqconsult > a:hover span {
 	background-image: url(../images/img1/icon2.png);
 	background-position: 0 7px;
 }
-/*--module-nav-open--*/
-
-/*--consult-gift-start--*/
-.consult-gift .close:hover {
-	background-color: rgb(246,234,229);
-}
-
-/*--banner-img-start-*/
+/* content-center-start */
 .banner img {
 	transition-duration: .3s;
 	transition-timing-function: ease-out;
@@ -80,9 +77,15 @@ ul.h-right ul.c-lists li.qqconsult > a:hover span {
 .banner ul.r-imgs li:hover div.txt{
 	opacity: 1;
 }
-
-/*---footer-right-ul.check-start--*/
+/* ===content-end=== */
+/*===footer-start===*/
 .footer .right ul.check li:hover {
 	background-color: rgb(216,176,86);
 	color: #fff;
 }
+/*===footer-end===*/
+/*===module-nav-open===*/
+.consult-gift .close:hover {
+	background-color: rgb(246,234,229);
+}
+/*===module-nav-end===*/

@@ -1,13 +1,12 @@
 @charset "utf-8";
-
-/*---module-nav-start--*/
+/* 放置一些模块的css样式 */
+/*===module-nav-start===*/
 .module-nav {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 0;
-	/*height: 100%;*/
 	background-color: rgba(6,5,4,.9);
 	transition-property: height;
 	overflow: hidden;
@@ -19,17 +18,17 @@
 	height: 430px;
 	border-bottom: 1px solid #bbb;
 }
-.module-nav ul.module-main-nav >li{
+ul.module-main-nav >li{
 	width: 100px;
 	height: 60px;
 	text-align: left;
 	line-height: 60px;
 	font-weight: 900;
 }
-.module-nav ul.module-main-nav >li a {
+ul.module-main-nav >li a {
 	display: block;
 }
-.module-nav ul.module-main-nav >li{
+ul.module-main-nav >li{
 	position: relative;
 }
 .module-nav li.trend-inter ul.trend-inter-lists,
@@ -69,7 +68,7 @@
 	line-height: 35px;
 }
 
-/*--module-nav-bottom-start--*/
+/*==module-nav-bottom-start==*/
 .module-nav-bottom {
 	width: 1210px;
 	height: 200px;
@@ -135,7 +134,7 @@
 	display: inline-block;
 	margin-top: 5px;
 }
-/*---module-switch-start---*/
+/*==module-switch-start==*/
 .module-switch {
 	position: absolute;
 	top: 270px;
@@ -151,9 +150,9 @@
 	user-select: none;
 }
 
-/*---module-nav-end--*/
+/*===module-nav-end===*/
 
-/*---pop-window-start---*/
+/*===pop-window-start===*/
 .pop-window {
 	position: fixed;
 	display: none;
@@ -207,11 +206,10 @@
 .pop-window span.close:hover {
 	background-color: rgba(226,208,172,.3);
 }
-/*---pop-window-end---*/
-/*---consult-gift-start---*/
+/*===pop-window-end===*/
+/*===consult-gift-start===*/
 .consult-gift {
 	position: fixed;
-	/*display: none;*/
 	left: 0;
 	right: 0;
 	top: 0;
@@ -250,3 +248,4 @@
 	height: 40px;
 	border-radius: 5px;
 }
+/*===consult-gift-end===*/

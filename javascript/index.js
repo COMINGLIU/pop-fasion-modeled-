@@ -1,24 +1,39 @@
-function index() {
-	var oHeader = document.querySelector(".header");
-	var oSwitch = document.querySelector(".header .more");
-	var oModulenav = document.querySelector(".module-nav");
-	var oModulenavClose = document.querySelector(".module-switch");
-	var oTrendSwitch2 = document.querySelector(".trendnav");
-	var oPop = document.querySelector(".pop-window");
+(function() {
+	//头部导航条
+	var oHeader = document.querySelector(".header"),
+		// 三根杠的展开导航块
+		oSwitch = document.querySelector(".header .more"),
+		// “智能助力设计 趋势导航遇见流行”下边的导航条
+		oModulenav = document.querySelector(".module-nav"),
+		// 右侧关闭“三根杠的展开导航块”的“x”
+		oModulenavClose = document.querySelector(".module-switch"),
+		// 趋势导航块（此导航块与“三根杠的展开导航块”指向同一个导航块）
+		oTrendSwitch2 = document.querySelector(".trendnav"),
+		// 底部弹窗
+		oPop = document.querySelector(".pop-window");
+	// 主页中非交互的量（包括函数与变量）
 	var demoStatic = {
+		// 获取某个元素的css样式属性值，obj-元素，attr-属性
 		getStyle: function(obj,attr) {
 			return window.getComputedStyle?window.getComputedStyle(obj)[attr]:obj.currentStyle[attr];
 		},
+		// 获取鼠标滚轮的步数
 		getScroll: function() {
 			var scroll = document.documentElement.scrollTop||window.scrollY||window.pageYoffset;
 			return scroll;
 		},
+		// open:控制底部弹窗的出现
 		open: true
-		/*open:控制底部弹窗的出现*/
 	}
+	/*=== demoRun:首页运行所需所有交互函数===*/
 	var demoRun = {
-		/*--右侧趋势导航条开关--*/
-		/*--the switch of the right tred sidebar*/
+		/*
+		*  modulenavOpen功能:控制有关右侧导航块打开关闭的操作  
+		*      oSwitch:打开header头部最右侧的导航块
+		*      oTrendSwitch2:打开右侧趋势导航块（注意：oSwitch、oTrendSwitch不会同时存在，随着鼠标滚轮滑动只会存在一个）
+		*      oModulenavClose：关闭oTrendSwitch2
+		*      oModulenav：关闭oSwitch
+		*/
 		modulenavOpen: function() {
 			oSwitch.addEventListener("mouseenter",function() {
 				oModulenav.style.height = "100%";
@@ -36,14 +51,25 @@ function index() {
 				oHeader.style.zIndex = "10";
 			})
 		},
-		/*--滑动滚轮，header背景色出现，趋势导航吸顶--*/
-		/*--the background-color of the header appears and the trend nav on the top while the mouse is scrolling*/
+		/*===scrollHeader:滑动滚轮，header背景色出现，趋势导航吸顶===*/
 		scrollHeader: function() {
-			var aHliBgs = document.querySelectorAll(".header >ul >li:not(.logo)");
-			var oHlanguageBg = document.querySelector(".header >ul li.language");
-			var oHlanguageUlBg = document.querySelector(".header >ul li.language ul");
-			var oHcontactBg = document.querySelector(".header >ul li.contact");
-			var oHcontactUlBg = document.querySelector(".header >ul li.contact ul");
+			// header头部所有的子部分
+			var aHliBgs = document.querySelectorAll(".header >ul >li:not(.logo)"),
+				// header处的“中文”
+				oHlanguageBg = document.querySelector(".header >ul li.language"),
+				// header处“中文”hover后出现的ul元素
+				oHlanguageUlBg = document.querySelector(".header >ul li.language ul"),
+				// header处的服务热线“小图标”
+				oHcontactBg = document.querySelector(".header >ul li.contact"),
+				// header处的服务热线“小图标”hover后出现的ul元素
+				oHcontactUlBg = document.querySelector(".header >ul li.contact ul");
+			/*
+			*功能：（window.onscroll）滚轮滑动事件实现——
+			*    控制底部弹窗出现与消失-oPop
+			*	 控制header右侧导航块的出现与消失-oSwitch 
+			*    控制header的背景颜色，及“hover”header上的子元素是否改变背景色
+			*	 控制滑动到首页中部白色背景处右侧元素的入场-demoRun.characterIn()
+			*/
 			window.addEventListener("scroll",function() {
 				var scroll = demoStatic.getScroll();
 				if(scroll>=100&&demoStatic.open===true) {
@@ -61,7 +87,6 @@ function index() {
 				}else {
 					headerBgChange1();
 					oSwitch.style.display = "none";
-					// oHeader.style.background = "linear-gradient(to bottom,rgba(0,0,0,.5) 0%,transparent 100%)";
 					oHeader.style.background = "transparent";
 					for(var i=0,len=aHliBgs.length;i<len;i++) {
 						(function(i){
@@ -72,24 +97,21 @@ function index() {
 					oHcontactBg.style.background = "transparent";
 				}
 			})
+			/*=== 将header部分背景颜色===*/
 			function headerBgChange1() {
-				/*当scroll<280时，执行这段代码：清除hover变色绑定的事件,不仅要清楚mouseenter还要清楚mouseleave*/
-				for(var i=0,len=aHliBgs.length;i<len;i++) {
-					(function(i){
+				//当scroll<280时，执行这段代码：清除hover变色绑定的事件,不仅要清除mouseenter还要清除mouseleave
+				for(let i=0,len=aHliBgs.length;i<len;i++) {
 						aHliBgs[i].onmouseenter=null;
-					})(i);
 				}
-				for(var i=0,len=aHliBgs.length;i<len;i++) {
-					(function(i){
+				for(let i=0,len=aHliBgs.length;i<len;i++) {
 						aHliBgs[i].onmouseleave=null;
-					})(i);
 				}
 				oHlanguageBg.onmouseenter=null;
 				oHcontactBg.onmouseenter=null;
 				oHlanguageBg.onmouseleave=null;
 				oHcontactBg.onmouseleave=null;
 			}
-			/*当scroll>=280时执行这段代码，相当于hover*/
+			/*===当scroll>=280时执行这段代码，相当于hover===*/
 			function headerBgChange2() {
 				for(var i=0,len=aHliBgs.length;i<len;i++) {
 					(function(i){
@@ -124,8 +146,7 @@ function index() {
 				}
 			}
 		},
-		/*--搜索框聚焦变长--*/
-		/*--search box becomes longer where focusing on it*/
+		/*==header头部搜索框聚焦变长==*/
 		searchInput: function() {
 			var oSearch = document.querySelector("li.search input");
 			var oSearchbox = document.querySelector("li.search")
@@ -140,8 +161,7 @@ function index() {
 				oSearch.placeholder = "搜索";	
 			})			
 		},
-		/*--关闭页面底部弹窗--*/
-		/*--the function of closing the bottom window*/
+		/*==关闭页面底部弹窗==*/
 		popWindowClose: function() {
 			var oClose = document.querySelector(".pop-window span.close");
 			oClose.addEventListener("click",function() {
@@ -149,8 +169,7 @@ function index() {
 				demoStatic.open= false;
 			})
 		},
-		/*--主页中部弹窗--*/
-		/*--the center bounce window--*/
+		/*==主页中部弹窗==*/
 		consultGiftClose: function() {
 			var oClose = document.querySelector(".consult-gift .close");
 			var oConsultGift = document.querySelector(".consult-gift");
@@ -158,7 +177,7 @@ function index() {
 				oConsultGift.style.display = "none";
 			}) 
 		},
-		/*--banner-left-图片轮播--start-*/
+		/*==banner-left-图片轮播--start==*/
 		bannerLimgTurn: function() {
 			var aImgs = document.querySelectorAll(".banner ul.l-imgs img");
 			var aPoints = document.querySelectorAll(".banner .img-l .point span");
@@ -167,7 +186,7 @@ function index() {
 				var timer = setInterval(function() {
 					change();
 				},4000);
-				/*--point切换图片--*/
+				//point切换图片
 				for(var k=0;k<2;k++) {
 					(function(k) {
 						aPoints[k].onmouseenter = function() {
@@ -184,7 +203,7 @@ function index() {
 						}
 					}(k))
 				}
-				/*--轮播函数change()--*/
+				//轮播函数change()
 				function change() {
 					if(i>=2) {i=0;}
 					for(var j=0;j<2;j++) {
@@ -198,22 +217,27 @@ function index() {
 			}
 			turn();
 		},
-		/*--banner-left-图片轮播--end-*/
+		/*==banner-left-图片轮播--end==*/
 		characterIn: function() {
 			var oCha = document.querySelector(".c-center-content .character");
 			oCha.style.left = "810px";
 		},
-		/*---footer-consult-check-start--*/
+		/*==footer-consult-check-start==*/
 		/*
-			点击指定元素显示选项，点击非指定位置的任意位置隐藏选项方法：
-				是对指定元素阻止冒泡即可
+		*	对footer部分的表单进行交互处理
 		*/
 		footerConsult: function() {
-			var oConsult = document.querySelector(".footer .right .consult");
-			var oCheck = document.querySelector(".footer .right ul.check");
-			var oOpen = document.querySelector(".footer .right .open");
-			var aChioce = document.querySelectorAll(".footer .right ul.check li");
-			var oTxt = document.querySelector(".footer .right .consult input");
+			var footerRight = document.querySelector(".footer .right"),
+				// 表单处“资源选项”栏目
+				oConsult = footerRight.querySelector(".consult"),
+				// 表单处"资源类型"栏目隐藏的选项ul
+				oCheck = footerRight.querySelector("ul.check"),
+				// “资源类型”右侧标识
+				oOpen = footerRight.querySelector(".open"),
+				// 表单处"资源类型"栏目隐藏的选项ul->li
+				aChioce = footerRight.querySelectorAll("ul.check li"),
+				// 表单处"资源类型"的value值
+				oTxt = footerRight.querySelector(".consult input");
 			oOpen.addEventListener("click",function(e) {
 				e=e||window.event;
 				e.cancelBubble = true;
@@ -224,6 +248,7 @@ function index() {
 				e.cancelBubble = true;
 				oCheck.style.display = "block";	
 			})
+			//隐藏表单“咨询类型”选项
 			document.addEventListener("click",function() {
 				oCheck.style.display = "none";		
 			})
@@ -244,5 +269,4 @@ function index() {
 	demoRun.consultGiftClose();
 	demoRun.bannerLimgTurn();
 	demoRun.footerConsult();
-}
-index();
+})();

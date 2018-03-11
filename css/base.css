@@ -1,15 +1,15 @@
 @charset "utf-8";
-body,ul,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p,th,td{margin:0;padding:0}
-html{user-select: none}
-table{border-collapse:collapse;border-spacing:0}
-img{border:0}
-address,caption,em,strong,th{font-style:normal;font-weight:normal}
+body,ul,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p,th,td{margin:0;padding:0;}
+html{user-select: none;}
+table{border-collapse:collapse;border-spacing:0;}
+img{border:0;}
+em,strong,th{font-style:normal;font-weight:normal;}
 ol,ul{list-style:none;}
-th{text-align:left}
+th{text-align:left;}
 a{text-decoration:none;}
-h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
-input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}
-input,textarea,select{*font-size:100%}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+input,textarea,select{*font-size:100%;}
 textarea{resize: none;}
 ul li {display: inline-block;vertical-align: top;}
 li.line i {
